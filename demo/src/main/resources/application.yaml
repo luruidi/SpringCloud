@@ -1,0 +1,6 @@
+server:
+  port: 8080
+book:
+  name: xiyouji
+  author: wuchengen
+  desc: ${book.author} is the author of ${book.name}
