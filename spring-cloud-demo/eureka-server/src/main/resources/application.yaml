@@ -1,12 +1,18 @@
 server:
   port: 1111
 
+spring:
+  application:
+    name: eureka-server
 
 eureka:
   instance:
-    hostname: 127.0.0.1
+    hostname: peer1
   client:
-    register-with-eureka: false
+    register-with-eureka: false #true是将自己作为服务向其他服务注册中心注册自己(即作为服务端,又作为客户端)
     fetch-registry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://peer1:1111/eureka/
+  server:
+    enable-self-preservation: false #关闭自我保护机制
+    eviction-interval-timer-in-ms: 4000 #清理间隔（单位毫秒，默认60*1000）
