@@ -11,10 +11,10 @@ public class DemoController {
     @Resource
     private Book book;
     @RequestMapping("/demo")
-    public String demo(){
+    public Book demo(Integer num){
         System.out.println(book.getName());
         System.out.println(book.getAuthor());
         System.out.println(book.getDesc());
-        return "demo";
+        return book;
     }
 }
