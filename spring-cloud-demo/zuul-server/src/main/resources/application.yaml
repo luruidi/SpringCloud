@@ -9,3 +9,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:1111/eureka/
+
+zuul:
+  routes:
+    api-1:
+      path: /api-1/** #api-1为路由的名字,可任意定义,保证一组path和serviceId的路由名相同即可
+      serviceId: feign-consumer
+
+logging:
+  file: api-gateway.log
