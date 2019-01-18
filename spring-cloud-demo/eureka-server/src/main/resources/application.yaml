@@ -7,7 +7,7 @@ spring:
 
 eureka:
   instance:
-    hostname: peer1
+    hostname: peer1 #需在host文件下，配置映射127.0.01 peer1
   client:
     register-with-eureka: false #true是将自己作为服务向其他服务注册中心注册自己(即作为服务端,又作为客户端)
     fetch-registry: false
