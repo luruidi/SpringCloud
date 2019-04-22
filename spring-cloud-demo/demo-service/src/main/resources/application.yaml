@@ -1,8 +1,3 @@
-book:
-  name: xiyouji
-  author: wuchengen
-  desc: ${book.author} is the author of ${book.name}
-
 spring:
   profiles:
     active: dev

@@ -4,8 +4,39 @@ server:
 spring:
   application:
     name: demo-service
+  mvc:
+    static-path-pattern: /** #设置静态资源的请求路径
+  # resources:
+   # static-locations: classpath:/static/ #指定静态资源的路径
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource # druid 连接池
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.example.model
+
+#pagehelper分页插件
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countsql
+
+#控制台打印sql
+logging:
+  level:
+    com:
+      example:
+        mapper:
+          debug
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/
+
+
